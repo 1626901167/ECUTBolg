@@ -1,3 +1,5 @@
+# ECUT博客
+
 ## 1.操作指南
 
 ### 1.配置Tomcat
@@ -16,7 +18,7 @@
 
 ### 1.博客管理模块
 
-![](ECUTBolg\img\1.png)
+![](https://github.com/1626901167/ECUTBolg/blob/main/img/1.png)
 
 ​	后台文章列表显示：该函数是一个后台文章列表显示的功能。它接收请求参数pageIndex（页码，默认为1）、pageSize（每页显示数量，默认为10）和status（文章状态），并根据这些参数查询文章列表。
 
@@ -132,7 +134,7 @@
 
 ```
 
-![](ECUTBolg\img\3.png)
+![](https://github.com/1626901167/ECUTBolg/blob/main/img/3.png)
 
 ​	编辑文章页面显示：该函数是一个Java方法，用于处理编辑文章页面的显示请求。它接收一个文章ID作为路径参数，使用该ID从文章服务中获取文章对象。如果文章对象不存在，则重定向到404页面。接着，从会话中获取当前用户对象，并进行权限验证，如果当前用户不是文章的作者且不是管理员，则重定向到403权限拒绝页面。通过模型对象将文章对象传递给前端页面，并从分类服务和标签服务中获取分类列表和标签列表，也一并传递给前端页面。最后，返回编辑文章页面的视图路径
 
@@ -165,7 +167,7 @@
 
 ### 2.用户管理模块
 
-![](ECUTBolg\img\2.png)
+![](https://github.com/1626901167/ECUTBolg/blob/main/img/2.png)
 
 ​	后台用户列表显示：该函数是一个Java后台用户列表显示函数，使用了Spring MVC框架的ModelAndView类。函数首先创建了一个ModelAndView对象，然后调用userService.listUser()方法获取用户列表并将其添加到ModelAndView对象中，最后设置视图名称为"Admin/User/index"并返回ModelAndView对象。该函数的作用是返回一个用户列表的模型和视图，用于在后台管理界面显示用户列表。
 
@@ -262,7 +264,7 @@
 
 ### 3.评论管理模块
 
-![4](ECUTBolg\img\4.png)
+![4](https://github.com/1626901167/ECUTBolg/blob/main/img/4.png)
 
 ​	发送的评论：该函数是一个Java方法，用于处理评论列表页面的请求。它接收请求参数pageIndex和pageSize来指定需要查询的页码和页大小。该方法从HttpSession中获取当前用户对象，并根据用户角色来构建查询条件。如果用户不是管理员，则查询该用户自己的评论；否则，查询所有评论。然后，调用commentService的listCommentByPage方法来获取评论分页信息，并将结果添加到Model中，以便在页面上显示。最后，返回一个视图名称"Admin/Comment/index"，表示需要渲染的页面。
 
